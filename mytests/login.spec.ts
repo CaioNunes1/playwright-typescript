@@ -22,4 +22,12 @@ test('login test', async ()=>{
     await page.locator("text='Continue'").click()
 
     await page.waitForTimeout(4000)
+
+    
+    const newContext = await browser.newContext()
+
+    const newPage= await newContext.newPage()
+    await newPage.goto('https://ecommerce-playground.lambdatest.io/index.php?route=account/account')
+
+    await page.waitForTimeout(5000)
 })  
