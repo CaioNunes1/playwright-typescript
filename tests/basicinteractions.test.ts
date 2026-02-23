@@ -14,3 +14,12 @@ test("basic interactions", async ({ page }) => {
     await page.waitForTimeout(3000);
 
 })
+
+test("Interaction with inputs", async ({page}) =>{
+    await page.goto("https://demoqa.com/automation-practice-form")
+    const firstNameInput = page.locator("input#firstName")
+    console.log("Before adding data ",await firstNameInput.inputValue());
+    await firstNameInput.fill("John")
+    console.log("After adding data",await firstNameInput.inputValue());
+    expect(firstNameInput).toHaveValue("John");
+})
