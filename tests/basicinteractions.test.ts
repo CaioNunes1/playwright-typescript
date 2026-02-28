@@ -26,8 +26,11 @@ test("Interaction with inputs", async ({page}) =>{
 
 test("Interaction with checkboxes", async({page})=>{
     await page.goto("https://demoqa.com/checkbox")
-    await page.locator("//span[@aria-label='Select Home']").click();
+    const singleCheckbox = await page.locator("//span[@aria-label='Select Home']");
 
+    expect(singleCheckbox).not.toBeChecked();
+    await singleCheckbox.check();
+    expect(singleCheckbox).toBeChecked();
     await page.goto("https://demoqa.com/text-box")
     await page.locator('input[type="text"]').fill("Johnn");
 })
