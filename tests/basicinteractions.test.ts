@@ -23,3 +23,11 @@ test("Interaction with inputs", async ({page}) =>{
     console.log("After adding data",await firstNameInput.inputValue());
     expect(firstNameInput).toHaveValue("John");
 })
+
+test("Interaction with checkboxes", async({page})=>{
+    await page.goto("https://demoqa.com/checkbox")
+    await page.locator("//span[@aria-label='Select Home']").click();
+
+    await page.goto("https://demoqa.com/text-box")
+    await page.locator('input[type="text"]').fill("Johnn");
+})
