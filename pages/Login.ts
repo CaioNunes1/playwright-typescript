@@ -12,7 +12,7 @@ export class Login{
         this.loginLink = page.locator('#login2');
         this.loginInput = page.locator('#loginusername');
         this.passwordInput = page.locator('#loginpassword');
-        this.loginButton = page.locator('.btn.btn-primary');
+        this.loginButton = page.getByRole('button', { name: 'Log in' });
     }
 
     async goToLoginPage(){
