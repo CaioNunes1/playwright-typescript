@@ -66,5 +66,6 @@ export class HomePage{
 
     async goToCart(){
         await this.cartButton.click();
+        await this.page.getByRole('heading', { name: 'Products' }).waitFor({ state: 'visible' });
     }
 }
