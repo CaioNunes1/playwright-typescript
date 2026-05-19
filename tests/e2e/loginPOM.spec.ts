@@ -1,7 +1,7 @@
 import test from "@playwright/test";
-import { Login } from "../pages/Login";
-import { HomePage } from "../pages/HomePage";
-import { CartPage } from "../pages/CartPage";
+import { Login } from "../../pages/Login";
+import { HomePage } from "../../pages/HomePage";
+import { CartPage } from "../../pages/CartPage";
 import { expect } from "@playwright/test";
 //import dateNow from "date-now";
 
